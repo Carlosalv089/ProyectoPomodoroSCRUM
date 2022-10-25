@@ -28,6 +28,7 @@ public class ConexionSQL {
             JOptionPane.showMessageDialog(null, "Error de conexion " + ex.getMessage());
             throw ex;
         }
+        return null;
 
     }
 }

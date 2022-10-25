@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class ConexionSQL {
     Connection conectar = null;
     String USER = "root";
-    String PASSWORD = "contrasenia";
+    String PASSWORD = "";
     
     public Connection conexion(){
         try {

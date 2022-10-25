@@ -22,7 +22,7 @@ CREATE SCHEMA IF NOT EXISTS `pomodoro` DEFAULT CHARACTER SET utf8mb4 COLLATE utf
 USE `pomodoro` ;
 
 -- -----------------------------------------------------
--- Table `pomodoro`.`usuarios`
+-- Table 'pomodoro'.'usuarios'
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pomodoro`.`usuarios` (
   `id_usuarios` INT NOT NULL AUTO_INCREMENT,
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `pomodoro`.`tareas` (
   `estado` VARCHAR(45) NULL DEFAULT NULL,
   `id_usuario` INT NOT NULL,
   PRIMARY KEY (`id_tareas`),
-  INDEX `id_usuario_idx` (`id_usuario` ASC) VISIBLE,
+  INDEX `id_usuario_idx` (`id_usuario` ASC),
   CONSTRAINT `id_usuario`
     FOREIGN KEY (`id_usuario`)
     REFERENCES `pomodoro`.`usuarios` (`id_usuarios`)

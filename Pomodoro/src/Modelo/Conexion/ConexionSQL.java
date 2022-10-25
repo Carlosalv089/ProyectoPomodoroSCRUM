@@ -5,8 +5,9 @@
  */
 package Modelo.Conexion;
 
-import java.sql.*;
-import javax.swing.JOptionPane;
+import static java.lang.System.out;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 /**
  *
@@ -14,21 +15,17 @@ import javax.swing.JOptionPane;
  */
 public class ConexionSQL {
 
-    Connection conectar = null;
-    String USER = "root";
-    String PASSWORD = "";
-
-    public Connection conexion() throws SQLException, Exception {
-
+    public static void main(String[] args) {
+        String cadenaConexion = "jdbc:mysql://localhost/pomodoro";
+        String usuario = "root";
+        String password = "root";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conectar = (Connection) DriverManager.getConnection("jdbc:mysql//localhost/pomodoro/", USER, PASSWORD);
-
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conexion = DriverManager.getConnection(cadenaConexion, usuario, password);
+            System.out.println("Conexion Creada");
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error de conexion " + ex.getMessage());
-            throw ex;
+            out.println(ex);
         }
-        return null;
 
     }
 }
